@@ -14,7 +14,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import DropDownPicker from 'react-native-dropdown-picker';
 import {DetailsScreen} from "./components/DetailsScreen";
-import {initializeFirebase, setupGeoListener, writeGeoData} from "./helpers/firebaseHelper";
+import {writeGeoData} from "./helpers/firebaseHelper";
 
 // import DetailsScreen from './components/DetailsScreen'
 // import HomeScreen from './components/HomeScreen'
@@ -22,14 +22,6 @@ import {initializeFirebase, setupGeoListener, writeGeoData} from "./helpers/fire
 function Calculator({ navigation, route }) {
   var V8 = 0;
   var V9 = 0;
-
-  useEffect(() => {
-      try {
-          initializeFirebase();
-      } catch (err) {
-          console.log(err)
-      }
-  }, []);
 
   React.useLayoutEffect(() => {
     navigation.setOptions({
